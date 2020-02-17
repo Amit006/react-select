@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Hello from './Hello';
+import Select from './Component/Select'
 import './style.css';
 
 
@@ -13,26 +14,20 @@ const options = [
 ];
 
 class App extends Component {
-  state = {
-    selectedOption: 'None',
-  }
+  // state = {
+  //   selectedOption: 'None',
+  // }
 
-  handleChange = ({ target }) => {
-    this.setState({
-      selectedOption: target.value
-    })
-  }
+  // handleChange = ({ target }) => {
+  //   this.setState({
+  //     selectedOption: target.value
+  //   })
+  // }
 
   render() {
     return (
       <div>
-        <span>{this.state.selectedOption}</span>
-        <select
-          value={this.state.selectedOption}
-          onChange={this.handleChange}
-          >
-        {options.map(({ value, label }, index) => <option value={value} >{label}</option>)}
-        </select>
+        <Select options={options} />
       </div>
     );
   }
